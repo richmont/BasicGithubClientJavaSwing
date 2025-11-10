@@ -1,4 +1,4 @@
-package br.com.richmont;
+package view;
 
 import javax.swing.*;
 

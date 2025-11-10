@@ -1,10 +1,11 @@
-package br.com.richmont;
+package view;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GithubUserPanel extends JPanel {
-    private String GithubUserUsername;
+    private static final long serialVersionUID = 1L;
+	private String GithubUserUsername;
     private String GithubUserName;
     private Integer Followers;
     private Integer Following;

@@ -1,25 +1,34 @@
-package br.com.richmont;
+package view;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.*;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 
-public class InitialWindow extends JFrame {
-    private JButton searchProfileBtn;
-    private JLabel searchProfileBtnLabel;
-    private JTextField searchProfileUsernameInput;
-    private String username;
-
-    public InitialWindow() throws HeadlessException {
+public class WindowManager {
+    
+    public static void showInitialWindow() {
+    	InitialWindow initwindow = new InitialWindow();
+    	initwindow.setVisible(true);
+    }
+    
+    public static void showUserWindow(String user) {
+        GithubUserPanel userWindow = new GithubUserPanel(user);
+        userWindow.setVisible(true);
+    }
+	//private JButton searchProfileBtn;
+    //private JLabel searchProfileBtnLabel;
+    //private JTextField searchProfileUsernameInput;
+    //private String username;
+    /*
+    public WindowManager() throws HeadlessException {
         setTitle("Search Github profile");
         setSize(800,800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        initializeComponents();
+        //initializeComponents();
 
     }
-
+    
     private void initializeComponents() {
 
         searchProfileBtn = new JButton("Search profile");
@@ -75,8 +84,9 @@ public class InitialWindow extends JFrame {
 
 
     }
+    */
+    /*
+	private void setupGridBagLayout(){
 
-    private void setupGridBagLayout(){
-
-    }
+    }*/
 }
