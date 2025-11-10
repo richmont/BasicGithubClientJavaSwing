@@ -1,12 +1,8 @@
 package view;
 
-import java.awt.CardLayout;
-import java.awt.HeadlessException;
+import java.awt.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 
 public class InitialWindow extends JFrame{
@@ -24,9 +20,28 @@ public class InitialWindow extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         CardLayout cl = new CardLayout();
-        JPanel panel = new JPanel(cl);
-        
-        
+        JPanel mainPanel = new JPanel(cl);
+        mainPanel.setLayout(new BorderLayout());
+        JPanel panelBuscaUsuario = new JPanel(cl);
+        panelBuscaUsuario.setLayout(new BoxLayout(panelBuscaUsuario, BoxLayout.LINE_AXIS));
+        //BoxLayout bl = new BoxLayout(mainPanel,BoxLayout.X_AXIS);
+
+
+        JLabel lblBuscaUsuario = new JLabel("Digite o nome do usuário");
+        JTextField txtBuscaUsuario = new JTextField();
+        JButton btnBuscaUsuario = new JButton("Buscar");
+        panelBuscaUsuario.add(Box.createRigidArea(new Dimension(10, 0)));
+        panelBuscaUsuario.add(lblBuscaUsuario);
+        panelBuscaUsuario.add(Box.createRigidArea(new Dimension(10, 0)));
+        panelBuscaUsuario.add(txtBuscaUsuario);
+        panelBuscaUsuario.add(Box.createRigidArea(new Dimension(10, 0)));
+        panelBuscaUsuario.add(btnBuscaUsuario);
+
+
+        mainPanel.add(panelBuscaUsuario,BorderLayout.PAGE_START);
+        add(mainPanel);
+        /*
+
         GithubUserPanel ghup = new GithubUserPanel("java");
         JButton btn1 = new JButton("Voltar para Tela 2");
         ghup.add(new JLabel("Esta é a Tela 1"));
@@ -47,7 +62,7 @@ public class InitialWindow extends JFrame{
         //btn1.addActionListener(e -> System.out.println("aaaa"));
         //btn2.addActionListener(e -> System.out.println("bbbbb"));
         btn2.addActionListener(e -> cl.show(panel, "t1"));
-        
+        */
 	}
 	
 	public String getUsername() {
